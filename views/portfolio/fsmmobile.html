@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Matthew Alcorn | FSM Mobile </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="../../css/site.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i" rel="stylesheet">
+
+  <!-- Piwik -->
+  <script type="text/javascript">
+    var _paq = _paq || [];
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u = "//mattalcorn.com/piwik/";
+      _paq.push(['setTrackerUrl', u + 'piwik.php']);
+      _paq.push(['setSiteId', 1]);
+      var d = document,
+        g = d.createElement('script'),
+        s = d.getElementsByTagName('script')[0];
+      g.type = 'text/javascript';
+      g.async = true;
+      g.defer = true;
+      g.src = u + 'piwik.js';
+      s.parentNode.insertBefore(g, s);
+    })();
+  </script>
+  <noscript>
+    <p><img src="//mattalcorn.com/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p>
+  </noscript>
+  <!-- End Piwik Code -->
+
+</head>
+
+<body>
+
+  <script src="../../js/jquery-2.1.4.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+
+  <div class="navbar navbar-default navbar-static-top navbar-background">
+    <div class="container">
+
+      <a href="../../index.html" class="navbar-brand"> Matthew Alcorn </a>
+
+      <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+        <span class="icon-bar mra-white"></span>
+        <span class="icon-bar mra-white"></span>
+        <span class="icon-bar mra-white"></span>
+      </button>
+
+      <div class="collapse navbar-collapse navHeaderCollapse">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="../../index.html">HOME</a></li>
+          <li class="active"><a href="../portfolio.html">PORTFOLIO</a></li>
+          <li><a href="../resume.html">RESUME</a></li>
+          <li><a href="../contactme.html">CONTACT ME</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container page-container">
+
+    <h1 class="text-center">IBM Flex System Manager Mobile</h1>
+
+    <div class="row">
+      <h3> OVERVIEW </h3>
+      <div class="col-md-12">
+        <p>The IBM Flex System Manager app was my first project at IBM (images on the left). My team built a hybrid mobile app using Cordova, HTML, CSS, and the Dojo JavaScript framework. The app's original design was based on Apple's iOS 6 design guidelines.
+          Below are mockups that I created (images on the right) up with Axure RP representing my thoughts and direction on a potential redesign based on Apple's new iOS 7 design guidelines.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <h3> MY ROLE </h3>
+      <div class="col-md-12">
+        <p>
+          As a software engineer on this team, my responsibilities included:
+        </p>
+        <ul>
+          <li>Writing JavaScript code using the Dojo Framework</li>
+          <li>Writing Java code to implement native Cordova plugins</li>
+          <li>Providing design input on the user interface for new features</li>
+          <li>Triaging and fixing bugs as they were reported</li>
+          <li>Performing code reviews</li>
+          <li>Managing our app on the Google Play Store</li>
+          <li>Attending and reporting status in daily team scrums</li>
+          <li>Presenting in monthly stakeholder meetings</li>
+        </ul>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <h3> CHASSIS LIST </h3>
+      <div class="col-sm-12 col-md-4">
+        <p>The Chassis List is the main starting point for the app. It shows a list of chassis that you've chosen to add to the app. It gives the user a quick overview of their environment and ranks the systems in such a way that the user sees which systems
+          need the most attention at the top. The new design utilizes a "tags" concept that, in a completed app, would allow the user to group Chassis together and toggle the view to view chassis with a certain tag.</p>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <img height="570" width="323" src="../../images/fsmmobile/chassis_list_old.png" alt="" />
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <img height="570" width="323" src="../../images/fsmmobile/chassis_list_new.png" alt="" />
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <h3> CHASSIS MAP </h3>
+      <div class="col-sm-12 col-md-4">
+        <p>The Chassis Map is one of the most useful components of the app. It gives the user a graphic representation of their physical chassis so they can quickly find which server/component needs attention. The map toggle allows the user to see the active
+          LEDs for any given system or the system's status. The user can toggle the view to see the back view of the chassis which includes components such as Switches, Fans, CMMs, and Power Supplies.</p>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <img height="570" width="323" src="../../images/fsmmobile/map_old.png" alt="" />
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <img height="570" width="323" src="../../images/fsmmobile/map_new.png" alt="" />
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <h3> ACTIONS </h3>
+      <div class="col-sm-12 col-md-4">
+        <p>Actions are a powerful set of tools used to manage the hardware within a user's environment. The actions include power cycling, turning on location LEDs, reseating the CMM, etc. The new design is a more powerful approach to actions as it's context
+          sensitive and available on most pages. Sliding out the Action Sheet gives the user a contextual list of actions that can be performed against the component being viewed.</p>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <img height="570" width="323" src="../../images/fsmmobile/actions_old.png" alt="" />
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <img height="570" width="323" src="../../images/fsmmobile/actions_new.png" alt="" />
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <h3> SYSTEM INFORMATION </h3>
+      <div class="col-sm-12 col-md-4">
+        <p>System Information is where the user can view the considerable amount of data available for a particular piece of hardware. This information can include things such as IP Addresses, Firmware Levels, UUIDs, and Serial Numbers. This page is also
+          where the user can access the warranty information specific to the component being viewed.
+        </p>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <img height="570" width="323" src="../../images/fsmmobile/details_old.png" alt="" />
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <img height="570" width="323" src="../../images/fsmmobile/details_new.png" alt="" />
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <h3> SETTINGS </h3>
+      <div class="col-sm-12 col-md-4">
+        <p>Settings are a group of configurations and tools that the user may wish to utilize while using the app to manage his/her environment. We allow things such as sharing connections, managing certificates, managing connected systems, and sending feedback.
+          The new design utilizes a Settings Drawer. This allows settings to be consolidated into a smaller space promoting easier discoverability and enhancing ease of use.
+        </p>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <img height="570" width="323" src="../../images/fsmmobile/settings_old.png" alt="" />
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <img height="570" width="323" src="../../images/fsmmobile/settings_new.png" alt="" />
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <h3> LOGIN </h3>
+      <div class="col-sm-12 col-md-4">
+        <p>The Login page is the first page the user sees when opening the app. The new design promotes a clean and simple interface whilst having unmistakable brand recognition. We allow all information within the app to be securely erased in the event
+          the user forgets or misplaces the necessary credentials for the app.
+        </p>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <img height="570" width="323" src="../../images/fsmmobile/login_old.png" alt="" />
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <img height="570" width="323" src="../../images/fsmmobile/login_new.png" alt="" />
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <h3> ADDITIONAL PAGES </h3>
+      <div class="col-sm-6 col-md-4">
+        <img height="570" width="323" src="../../images/fsmmobile/gallery1.png" alt="" />
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <img height="570" width="323" src="../../images/fsmmobile/gallery2.png" alt="" />
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <img height="570" width="323" src="../../images/fsmmobile/gallery3.png" alt="" />
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+</body>
+
+</html>

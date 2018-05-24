@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Matthew Alcorn | Cordova & SSL Certificates </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="../../css/site.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i" rel="stylesheet">
+
+  <!-- Piwik -->
+  <script type="text/javascript">
+    var _paq = _paq || [];
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u = "//mattalcorn.com/piwik/";
+      _paq.push(['setTrackerUrl', u + 'piwik.php']);
+      _paq.push(['setSiteId', 1]);
+      var d = document,
+        g = d.createElement('script'),
+        s = d.getElementsByTagName('script')[0];
+      g.type = 'text/javascript';
+      g.async = true;
+      g.defer = true;
+      g.src = u + 'piwik.js';
+      s.parentNode.insertBefore(g, s);
+    })();
+  </script>
+  <noscript>
+    <p><img src="//mattalcorn.com/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p>
+  </noscript>
+  <!-- End Piwik Code -->
+
+</head>
+
+<body>
+
+  <script src="../../js/jquery-2.1.4.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+
+  <div class="navbar navbar-default navbar-static-top navbar-background">
+    <div class="container">
+
+      <a href="../../index.html" class="navbar-brand"> Matthew Alcorn </a>
+
+      <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+        <span class="icon-bar mra-white"></span>
+        <span class="icon-bar mra-white"></span>
+        <span class="icon-bar mra-white"></span>
+      </button>
+
+      <div class="collapse navbar-collapse navHeaderCollapse">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="../../index.html">HOME</a></li>
+          <li class="active"><a href="../portfolio.html">PORTFOLIO</a></li>
+          <li><a href="../resume.html">RESUME</a></li>
+          <li><a href="../contactme.html">CONTACT ME</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container page-container">
+
+    <h1 class="text-center">Cordova & SSL Certificates</h1>
+
+    <div class="row">
+      <h3> OVERVIEW </h3>
+      <div class="col-md-12">
+        <p>
+          <b> This post originally appeared on IBM's Mobile Frontier blog on August 26th, 2013. I wrote this post to share some of our hurdles and solutions when developing hybrid apps.
+        </p>
+        <p>
+          I want to take some time today to discuss developing an Android app with Apache Cordova (a platform for developing hybrid mobile apps using HTML, CSS and JavaScript technologies). Specifically, a way to work more flexibly with certificates when using
+          Cordova as a platform for development. If you currently use Cordova for development, you may be aware that dealing with self-signed, untrusted or invalid certificates (SSUICs) is a problem when writing an application that needs to contact some
+          other entity via an internet connection (which is a very large percentage of mobile apps). Cordova has an implementation that, while secure, isn't inherently flexible. As you can see from the code below, if the Android app isn't built using debug mode, the
+          connection is rejected without prompting or alerting the user if an SSUIC is presented during the connection process.
+        </p>
+      </div>
+      <div class="col-md-12">
+        <img class="img-responsive img-rounded center-block" src="../../images/cordova/cordova-base.png" alt="" />
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <h3>POTENTIAL SOLUTIONS AND DRAWBACKS</h3>
+      <div class="col-md-12">
+        <p>
+          In the real world, shipping an app in 'debug' mode simply isn't going to fly. This becomes a problem when attempting to process a connection request and being presented with an SSUIC. Without modification
+          to the above code, users must have a valid certificate available in order for the connection attempt to be successful. As is sometimes the case, you our your users may want to connect to an entity that is not set up with a valid certificate.
+          A few solutions exist to help us work around or solve this problem. The first is an implementation which I don't ever want to see or hear about in production code. I have seen several blogs and forums suggest that developers simply write code to simply bypass
+          the SSL Error and 'accept' all SSUICs. I don't think I need to go into detail on why this is bad idea - avoid this route at any cost. Our second option is more feasible, but still not ideal. It involves modifying and maintaining a custom version
+          of Cordova with changes to this one little function. Doing this causes overhead in development as you'll need to spend time updating and retrofitting code into new versions of Cordova (along with maintaining builds for your version of Cordova).
+          This brings us to option three: Cordova plugins. Plugins can be written by developers to extend or add (or in our case enhance) functionality and features to their app. Plugins are bits of web and native code that allow developers to work
+          a bit closer to the native layer without leaving the comfort of having a hybrid web app.
+        </p>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <h3>SOLUTION OF CHOICE</h3>
+      <div class="col-md-12">
+        <p>
+          So, we now know the problem, we have some initial information on the Cordova source code, and we have some potential solutions. What now? Our chosen solution was to write a Cordova plugin that works to override Cordova's implementation of the <code class="mra-code">OnReceivedSslError</code>
+          method and allows you as a developer to handle certificates in a more secure and flexible fashion. At this point, I assume you have a basic understanding of Cordova plugins so I won't be digging too far into our full implementation - I'll just
+          be going over the core pieces that make this work. To start, you'll need to create a Java class that extends from either <code class="mra-code">IceCreamCordovaWebClient</code> or <code class="mra-code">CordovaWebClient</code>. This class houses the function we'll be overriding. From here, you're all
+          set to override <code class="mra-code">onReceivedSslError</code> any way that you see fit. As an example, here's one simple way to override it that allows your users to accept or deny invalid/untrusted certificates.
+        </p>
+      </div>
+      <div class="col-md-12">
+        <img class="img-responsive img-rounded center-block" src="../../images/cordova/solution-p1.png" alt="" />
+        <br>
+        <p>
+          From here, you'll need to create, and set as default, your own custom <code class="mra-code">CordovaWebViewClient</code> in the Java activity file. This allows us to bring in our own custom implementation of <code class="mra-code">OnReceivedSslError</code> without much hassle. The code is very simple and an example
+          can be found below.
+        </p>
+      </div>
+      <div class="col-md-12">
+        <img class="img-responsive img-rounded center-block" src="../../images/cordova/solution-p2.png" alt="" />
+        <br>
+        <p>
+          Once this is done, you're ready to give things a spin. Now when attempting to connect to an entity with an SSUIC, a prompt should appear with the ability to continue or halt the connection.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <h3>CONCLUSION</h3>
+      <div class="col-md-12">
+        <p>
+          While not a perfect solution, this does allow users to decide for themselves if they'd like to accept or reject invalid/untrusted certificates. With a little more work, you can provide more insightful information, such has the error received and certificate
+          details. This will allow users to make a more informed decision when establishing connections. You can also investigate whether or not it's valuable to store your users' choices across app sessions by leveraging local storage. Later down the
+          road, we'd like to investigate getting such a solution integrated with the Cordova code base or at least be able to work with the Cordova folks to offer an official plugin of sorts. I hope you have found the information in this post to be of
+          value and I hope it allows you to better serve and protect your users.
+        </p>
+        <p>
+          <b>Matthew Alcorn is an iOS/Android Engineer for IBM Flex System Manager.</b>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

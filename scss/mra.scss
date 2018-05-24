@@ -1,0 +1,155 @@
+// Variables
+$mra-blue: #6ec1f5;
+$mra-red: #ff5252;
+$mra-green: #2ECC71;
+$border-color: #ccc;
+$medium-gray: #727272;
+
+$font-weight: 300;
+$font: 'Merriweather Sans';
+
+// Overridden defaults
+// *** focus inputs
+$state-danger-text: $mra-red !default;
+$input-border-focus: $mra-blue !default;
+// *** alerts
+$state-success-text: $mra-green !default;
+$state-success-bg: lighten($mra-green, 50%) !default;
+$state-success-border: darken($state-success-bg, 20%) !default;
+$state-danger-bg: lighten($mra-red, 33%) !default;
+$state-danger-border: darken($state-danger-bg, 20%) !default;
+// *** navbar
+$navbar-default-color: $mra-blue !default;
+$navbar-default-bg: $mra-blue !default;
+$navbar-default-link-color: white !default;
+$navbar-default-link-hover-color: white !default;
+$navbar-default-link-active-color: white !default;
+$navbar-default-link-hover-bg: darken($navbar-default-bg, 5%) !default;
+$navbar-default-link-active-bg: darken($navbar-default-bg, 10%) !default;
+$navbar-default-border: $navbar-default-bg !default;
+$navbar-default-brand-hover-color: white !default;
+$navbar-default-toggle-hover-bg: darken($navbar-default-bg, 5%) !default;
+$navbar-default-toggle-border-color: white !default;
+$navbar-default-toggle-icon-bar-bg: white !default;
+// *** thumbnail
+$thumbnail-padding: 14px !default;
+// Thumbnail border color
+$thumbnail-border: $border-color !default;
+// Thumbnail border radius
+$thumbnail-border-radius: 3px !default;
+// Padding around the thumbnail caption
+$thumbnail-caption-padding: 9px !default;
+@import "stylesheets/_bootstrap.scss";
+body {
+  background-color: #eee;
+}
+a {
+  font-family: $font, sans-serif !important;
+  font-weight: $font-weight;
+  text-decoration: none !important;
+}
+hr {
+  border-color: $border-color;
+}
+h4,h3 {
+  font-family: $font, sans-serif !important;
+  font-weight: $font-weight;
+  color: $mra-red;
+}
+h1,h2 {
+  font-family: $font, sans-serif !important;
+  font-weight: $font-weight;
+  color: $medium-gray;
+}
+p,
+div {
+  font-family: $font, sans-serif !important;
+  font-weight: $font-weight;
+  &.homecard {
+    font-size: 135%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+.page-container {
+  background-color: white;
+  padding: 4%;
+  border-radius: 5px;
+  border-color: $border-color;
+  border-style: solid;
+  border-width: 1px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+.mra-homepage-background {
+  background: #efefef;
+  background-image: url("../images/seigaiha.png");
+}
+.mra-homecard {
+  background-color: white;
+  border-radius: 3px;
+  border-color: $border-color;
+  margin-top: 50px;
+  padding: 50px 10px;
+}
+.mra-social-containers {
+  background-color: white;
+  border-radius: 3px;
+  border-color: $border-color;
+  margin-top: 25px;
+  color: $medium-gray;
+}
+.mra-primary-action {
+  font-size: 97%;
+  color: white;
+  background-color: $mra-green;
+  border-color: darken($mra-green, 5%);
+  border-radius: 2px;
+  &:hover {
+    font-size: 97%;
+    color: white;
+    background-color: darken($mra-green, 5%);
+    border-color: darken($mra-green, 5%);
+    border-radius: 2px;
+  }
+}
+.mra-portfolio-card {
+  &:hover {
+    box-shadow: 0 0 15px $border-color;
+  }
+}
+
+.spacer {
+  margin-top: 60px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: lighten($border-color, 7%);
+}
+
+.footer-img {
+  position: relative;
+  /* Declared position allows for location changes */
+
+  top: -2px;
+  /* Moves the image 2px closer to the top of the page */
+}
+
+.container .text-muted {
+  margin: 15px 0;
+}
+
+.mra-code{
+  background-color: white;
+  color: $medium-gray;
+}
