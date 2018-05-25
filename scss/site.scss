@@ -39,7 +39,7 @@ $thumbnail-border: $border-color !default;
 $thumbnail-border-radius: 3px !default;
 // Padding around the thumbnail caption
 $thumbnail-caption-padding: 9px !default;
-@import "stylesheets/_bootstrap.scss";
+@import "_bootstrap.scss";
 body {
   background-color: #eee;
 }
@@ -77,13 +77,13 @@ div {
 }
 .page-container {
   background-color: white;
-  padding: 4%;
+  padding: 20px 40px 20px 40px;
   border-radius: 5px;
   border-color: $border-color;
   border-style: solid;
   border-width: 1px;
-  margin-top: 1%;
-  margin-bottom: 1%;
+  margin-top: 35px;
+  margin-bottom: 35px;
 }
 .mra-homepage-background {
   background: #efefef;
