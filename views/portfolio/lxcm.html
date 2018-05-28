@@ -2,36 +2,22 @@
 <html>
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119969569-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-119969569-1');
+  </script>
+
+
   <title> Matthew Alcorn | Lenovo XClarity Mobile </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link href="../../css/site.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i" rel="stylesheet">
-
-  <!-- Piwik -->
-  <script type="text/javascript">
-    var _paq = _paq || [];
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-      var u = "//mattalcorn.com/piwik/";
-      _paq.push(['setTrackerUrl', u + 'piwik.php']);
-      _paq.push(['setSiteId', 1]);
-      var d = document,
-        g = d.createElement('script'),
-        s = d.getElementsByTagName('script')[0];
-      g.type = 'text/javascript';
-      g.async = true;
-      g.defer = true;
-      g.src = u + 'piwik.js';
-      s.parentNode.insertBefore(g, s);
-    })();
-  </script>
-  <noscript>
-    <p><img src="//mattalcorn.com/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p>
-  </noscript>
-  <!-- End Piwik Code -->
-
 </head>
 
 <body>
@@ -53,9 +39,15 @@
       <div class="collapse navbar-collapse navHeaderCollapse">
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="../../index.html">HOME</a></li>
-          <li class="active"><a href="../portfolio.html">PORTFOLIO</a></li>
-          <li><a href="../resume.html">RESUME</a></li>
+          <li>
+            <a href="../../index.html">HOME</a>
+          </li>
+          <li class="active">
+            <a href="../portfolio.html">PORTFOLIO</a>
+          </li>
+          <li>
+            <a href="../resume.html">RESUME</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -68,8 +60,11 @@
     <div class="row">
       <h3> OVERVIEW </h3>
       <div class="col-md-12">
-        <p>Lenovo XClarity Mobile is a new way for systems administrators to manage their hardware environments with their mobile devices. With fresh and innovative ideas, new technologies, and a clear design, we were able to provide an application that
-          provides remote mobile management capabilities to users. This project is built on the Ionic Framework, Cordova, and Crosswalk. These technologies enable to the team to deliver a great experience and a reliable systems management solution.</p>
+        <p>Lenovo XClarity Mobile is a new way for systems administrators to manage their hardware environments with their mobile
+          devices. With fresh and innovative ideas, new technologies, and a clear design, we were able to provide an application
+          that provides remote mobile management capabilities to users. This project is built on the Ionic Framework, Cordova,
+          and Crosswalk. These technologies enable to the team to deliver a great experience and a reliable systems management
+          solution.</p>
       </div>
     </div>
 
@@ -101,7 +96,8 @@
       <h3> NEWSFEED </h3>
       <div class="col-sm-12 col-md-4">
         <p>
-          The Newsfeed is a new innovation in mobile systems management. We surface alerts and bring issues directly to the user. This enables them act quickly and make more informed decisions about the actions that need to be taken in their environment.
+          The Newsfeed is a new innovation in mobile systems management. We surface alerts and bring issues directly to the user. This
+          enables them act quickly and make more informed decisions about the actions that need to be taken in their environment.
         </p>
       </div>
       <div class="col-sm-6 col-md-4">
@@ -116,8 +112,9 @@
       <h3> HARDWARE </h3>
       <div class="col-sm-12 col-md-4">
         <p>
-          The Hardware view is a comprehensive view of all the hardware in a user's environment. We quickly summarize all the types of hardware and give an inventory and health overview of this hardware. From here, users can proceed further to determine more about
-          their hardware health and inventory details.</p>
+          The Hardware view is a comprehensive view of all the hardware in a user's environment. We quickly summarize all the types
+          of hardware and give an inventory and health overview of this hardware. From here, users can proceed further to
+          determine more about their hardware health and inventory details.</p>
       </div>
       <div class="col-sm-6 col-md-4">
         <img height="552" width="322" src="../../images/lxcm/ios_hardware.png" alt="" />
@@ -131,7 +128,8 @@
       <h3> MONITORING </h3>
       <div class="col-sm-12 col-md-4">
         <p>
-          The Monitoring view allows the user to see all the events, alerts and jobs that are present in an environment. From here, they can get more details on these items and even share these details with others directly from the app.
+          The Monitoring view allows the user to see all the events, alerts and jobs that are present in an environment. From here,
+          they can get more details on these items and even share these details with others directly from the app.
         </p>
       </div>
       <div class="col-sm-6 col-md-4">
@@ -146,8 +144,9 @@
       <h3> CHASSIS MAP </h3>
       <div class="col-sm-12 col-md-4">
         <p>
-          The Chassis Map is a recent addition to the mobile app. It represents a detailed and precise representation of a hardware environment - right down to the active LEDs on the hardware itself. The Chassis Map is interactive with zoom and click-to-drill down
-          functionality allowing the user to get more details and navigate straight to a device of interest.
+          The Chassis Map is a recent addition to the mobile app. It represents a detailed and precise representation of a hardware
+          environment - right down to the active LEDs on the hardware itself. The Chassis Map is interactive with zoom and
+          click-to-drill down functionality allowing the user to get more details and navigate straight to a device of interest.
         </p>
       </div>
       <div class="col-sm-6 col-md-4">
@@ -162,8 +161,11 @@
       <h3> RACK MAP </h3>
       <div class="col-sm-12 col-md-4">
         <p>
-          The Rack Map is also a new addition to the mobile app - similar in function to the Chassis Map. The hierarchy of a Rack is different from that of a Chassis. Racks can act as the "parent" of a Chassis as well contain rack servers, switches, and storage devices. The height constraints of a Rack,
-          when shown on a mobile device, presented a unique challenge - we added a performant and fun up/down control on the righthand side. This allowed for easy navigation and did not interfere with our zoom or click functionality.
+          The Rack Map is also a new addition to the mobile app - similar in function to the Chassis Map. The hierarchy of a Rack is
+          different from that of a Chassis. Racks can act as the "parent" of a Chassis as well contain rack servers, switches,
+          and storage devices. The height constraints of a Rack, when shown on a mobile device, presented a unique challenge
+          - we added a performant and fun up/down control on the righthand side. This allowed for easy navigation and did
+          not interfere with our zoom or click functionality.
         </p>
       </div>
       <div class="col-sm-6 col-md-4">
@@ -178,8 +180,10 @@
       <h3> ACTIONS </h3>
       <div class="col-sm-12 col-md-4">
         <p>
-          The Actions list is an ever expanding set of actions we allow the user to take directly from the mobile app. We provide incredible value and flexibility to the user by allowing them to take actions on their hardware from their mobile device. Actions are
-          a key part of the mobile application and they allow the user to solve problems from anywhere where they have an internet connection.
+          The Actions list is an ever expanding set of actions we allow the user to take directly from the mobile app. We provide incredible
+          value and flexibility to the user by allowing them to take actions on their hardware from their mobile device.
+          Actions are a key part of the mobile application and they allow the user to solve problems from anywhere where
+          they have an internet connection.
         </p>
       </div>
       <div class="col-sm-6 col-md-4">
@@ -194,8 +198,9 @@
       <h3> COMPONENT LIST </h3>
       <div class="col-sm-12 col-md-4">
         <p>
-          The Component List gives the user a detailed breakdown (sorted by type and severity) of the hardware within a selected chassis or rack. From this components page, the user can select to view more details about a particular piece of hardware and even perform
-          actions on them.
+          The Component List gives the user a detailed breakdown (sorted by type and severity) of the hardware within a selected chassis
+          or rack. From this components page, the user can select to view more details about a particular piece of hardware
+          and even perform actions on them.
         </p>
       </div>
       <div class="col-sm-6 col-md-4">
