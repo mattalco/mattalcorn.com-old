@@ -92,6 +92,14 @@ div {
   text-align: center;
 }
 
+.image-border {
+  border: 1px;
+  border-style: solid;
+  border-color: #ccc;
+  width: 199px;
+  height: 199px;
+}
+
 .page-container {
   background-color: white;
   padding: 20px 40px 20px 40px;
@@ -182,4 +190,14 @@ div {
 
 .mra-resume-link-icon {
   margin-left: 4px;
+}
+
+.hint-text {
+  margin-top: 1rem;
+  margin-bottom: 8rem;
+  font-style: italic;
+}
+
+.img-shadow {
+  box-shadow: #777 5px 5px 15px;
 }
